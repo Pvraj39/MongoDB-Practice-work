@@ -1,0 +1,89 @@
+rs.initiate({
+  _id: "myReplSet",
+  members: [
+    { _id: 0, host: "localhost:27017" },
+    { _id: 1, host: "localhost:27018" },
+    { _id: 2, host: "localhost:27019" }
+  ]
+})
+MongoServerError[AlreadyInitialized]: already initialized
+rs.status()
+  syncSourceHost: '',
+  syncSourceId: -1,
+  heartbeatIntervalMillis: Long('2000'),
+  majorityVoteCount: 1,
+  writeMajorityCount: 1,
+  votingMembersCount: 1,
+  writableVotingMembersCount: 1,
+  optimes: {
+    lastCommittedOpTime: { ts: Timestamp({ t: 1781099550, i: 1 }), t: Long('1') },
+    lastCommittedWallTime: 2026-06-10T13:52:30.746Z,
+    readConcernMajorityOpTime: { ts: Timestamp({ t: 1781099550, i: 1 }), t: Long('1') },
+    appliedOpTime: { ts: Timestamp({ t: 1781099550, i: 1 }), t: Long('1') },
+    durableOpTime: { ts: Timestamp({ t: 1781099550, i: 1 }), t: Long('1') },
+    writtenOpTime: { ts: Timestamp({ t: 1781099550, i: 1 }), t: Long('1') },
+    lastAppliedWallTime: 2026-06-10T13:52:30.746Z,
+    lastDurableWallTime: 2026-06-10T13:52:30.746Z,
+    lastWrittenWallTime: 2026-06-10T13:52:30.746Z
+  },
+  lastStableRecoveryTimestamp: Timestamp({ t: 1781099500, i: 1 }),
+  electionCandidateMetrics: {
+    lastElectionReason: 'electionTimeout',
+    lastElectionDate: 2026-06-10T13:46:50.345Z,
+    electionTerm: Long('1'),
+    lastCommittedOpTimeAtElection: { ts: Timestamp({ t: 1781099210, i: 1 }), t: Long('-1') },
+    lastSeenWrittenOpTimeAtElection: { ts: Timestamp({ t: 1781099210, i: 1 }), t: Long('-1') },
+    lastSeenOpTimeAtElection: { ts: Timestamp({ t: 1781099210, i: 1 }), t: Long('-1') },
+    numVotesNeeded: 1,
+    priorityAtElection: 1,
+    electionTimeoutMillis: Long('10000'),
+    newTermStartDate: 2026-06-10T13:46:50.382Z,
+    wMajorityWriteAvailabilityDate: 2026-06-10T13:46:50.468Z
+  },
+  members: [
+    {
+      _id: 0,
+      name: '127.0.0.1:27017',
+      health: 1,
+      state: 1,
+      stateStr: 'PRIMARY',
+      uptime: 545,
+      optime: { ts: Timestamp({ t: 1781099550, i: 1 }), t: Long('1') },
+      optimeDate: 2026-06-10T13:52:30.000Z,
+      optimeWritten: { ts: Timestamp({ t: 1781099550, i: 1 }), t: Long('1') },
+      optimeWrittenDate: 2026-06-10T13:52:30.000Z,
+      lastAppliedWallTime: 2026-06-10T13:52:30.746Z,
+      lastDurableWallTime: 2026-06-10T13:52:30.746Z,
+      lastWrittenWallTime: 2026-06-10T13:52:30.746Z,
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: '',
+      electionTime: Timestamp({ t: 1781099210, i: 2 }),
+      electionDate: 2026-06-10T13:46:50.000Z,
+      configVersion: 1,
+      configTerm: 1,
+      self: true,
+      lastHeartbeatMessage: ''
+    }
+  ],
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1781099550, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1781099550, i: 1 })
+}
+use college
+
+db.students.insertOne({
+  name: "Yash",
+  course: "MongoDB"
+})
+
+switched to db college
+prodrep [primary] college
+
+
