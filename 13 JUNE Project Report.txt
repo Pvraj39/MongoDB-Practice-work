@@ -1,0 +1,128 @@
+E-Learning Portal Management System
+Project Description
+The E-Learning Portal Management System is a console-based backend application developed using Java and MongoDB. The system is designed to manage students, instructors, courses, lessons, and enrollments in an online learning environment. It provides CRUD operations for all entities and demonstrates MongoDB relationships, aggregation operations, and search functionality.
+The project enables instructors to create and manage courses, allows students to enroll in courses, tracks course progress, and provides course search and dashboard functionalities. The application is developed as a backend-focused project without a frontend interface.
+________________________________________
+Project Objectives
+•	Manage students, instructors, courses, lessons, and enrollments.
+•	Implement CRUD operations using MongoDB.
+•	Establish relationships between collections.
+•	Demonstrate One-to-Many and Many-to-Many mappings.
+•	Implement course search functionality.
+•	Track student course progress.
+•	Utilize MongoDB aggregation features such as $lookup and $group.
+________________________________________
+Entities
+1. Students
+Stores student information.
+Attributes:
+•	Student ID
+•	Name
+•	Email
+•	Phone Number
+2. Instructors
+Stores instructor information.
+Attributes:
+•	Instructor ID
+•	Name
+•	Email
+•	Specialization
+3. Courses
+Stores course information.
+Attributes:
+•	Course ID
+•	Course Name
+•	Description
+•	Duration
+•	Instructor ID
+4. Lessons
+Stores lesson information for courses.
+Attributes:
+•	Lesson ID
+•	Course ID
+•	Lesson Title
+•	Video URL
+5. Enrollments
+Stores student enrollment details.
+Attributes:
+•	Enrollment ID
+•	Student ID
+•	Course ID
+•	Progress
+________________________________________
+Collection Mappings
+1. Instructor → Courses (One-to-Many)
+One instructor can teach multiple courses.
+Example:
+INS101
+•	Java Programming
+•	Spring Boot
+•	MongoDB Fundamentals
+Relationship Field:
+•	instructorId in Courses Collection
+________________________________________
+2. Course → Lessons (One-to-Many)
+One course can contain multiple lessons.
+Example:
+Java Programming
+•	Introduction to Java
+•	Variables and Data Types
+•	Loops and Conditions
+Relationship Field:
+•	courseId in Lessons Collection
+________________________________________
+3. Student ↔ Courses (Many-to-Many)
+A student can enroll in multiple courses, and a course can have multiple students.
+Implemented using the Enrollments collection.
+Relationship Fields:
+•	studentId
+•	courseId
+________________________________________
+Features Implemented
+•	Student Management
+•	Instructor Management
+•	Course Management
+•	Lesson Management
+•	Enrollment Management
+•	Course Search
+•	Student Dashboard
+•	Course Progress Tracking
+•	Course Statistics
+________________________________________
+MongoDB Features Used
+•	Collections and Documents
+•	CRUD Operations
+•	Indexing
+•	Aggregation Pipeline
+•	$lookup
+•	$group
+•	Regular Expression Search
+•	Document References
+________________________________________
+Technology Used
+Backend Language
+•	Java
+Database
+•	MongoDB
+Database Query Language
+•	MongoDB Query Language (MQL)
+Build Tool
+•	Maven
+MongoDB Driver
+•	MongoDB Java Driver
+________________________________________
+Tools Used
+•	Visual Studio Code (VS Code)
+•	MongoDB Community Server
+•	MongoDB Compass
+•	Mongo Shell (mongosh)
+•	Maven
+________________________________________
+Platform Used
+•	Windows Operating System
+•	Java Development Kit (JDK 17 or above)
+________________________________________
+Conclusion
+The E-Learning Portal Management System successfully demonstrates the implementation of MongoDB with Java for managing educational data. The project covers CRUD operations, collection relationships, aggregation pipelines, search functionality, and progress tracking. It serves as a practical example of backend application development using MongoDB and Java.
+
+
